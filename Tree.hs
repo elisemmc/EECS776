@@ -45,26 +45,13 @@ summationM (Node a b) = do
 summation' :: Tree -> Int
 summation' a = case runState (summationM a) 0 of (_,s) -> s
 
--- get = State $ \s -> (s,s)
--- put newState = State $ \s -> ((), newState)
+--Test trees
 
 a = (Node (Leaf 4) (Leaf 3))
 b = Leaf 4
 c = (Node (Node (Leaf 9) (Leaf 7)) (Leaf 3))
-
---type Stack = [Int]
-
---pop :: State Stack Int  
---pop = State $ \(x:xs) -> (x,xs)  
-  
---push :: Int -> State Stack ()  
---push a = State $ \xs -> ((),a:xs)  
-
---stackManip :: State Stack Int  
---stackManip = do  
-  --  push 3  
-  --  a <- pop  
-  --  pop  
+ 
 
 -- Websites Used
+-- website linked on piazza
 -- http://stackoverflow.com/questions/29340070/how-should-i-define-a-binary-tree-in-haskell
