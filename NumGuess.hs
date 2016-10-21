@@ -15,11 +15,11 @@ playAgain = do
         else do
             putStrLn " ... Exiting ... "
 
-guessNum :: (Ord a, Read a) => a -> IO ()
+guessNum :: Int -> IO ()
 guessNum num = do
     putStrLn "Please guess a number"
     guess <- getLine
-    if ( (read guess) == num )
+    if ( (read guess :: Int) == num )
         then do
             print "Correct"
             playAgain
